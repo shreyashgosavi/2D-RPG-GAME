@@ -1,0 +1,276 @@
+[gd_scene load_steps=20 format=3 uid="uid://c4gy3ad6l7clg"]
+
+[ext_resource type="Script" path="res://KnightPlayer.gd" id="10"]
+[ext_resource type="PackedScene" path="res://GoldenSword.tscn" id="11"]
+[ext_resource type="Texture2D" uid="uid://hsi6uty7hjtv" path="res://Png/SwordPng/weapon_anime_sword.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://0ihj44ek533d" path="res://Png/SwordPng/weapon_knight_sword.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://d0r55toqxc5gp" path="res://Png/SwordPng/weapon_cleaver.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://jnqocx5gkge" path="res://Png/SwordPng/weapon_duel_sword.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dxaej4srqadpy" path="res://Png/SwordPng/weapon_red_gem_sword.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://dxdiisexkxqph" path="res://Png/SwordPng/weapon_katana.png" id="17"]
+[ext_resource type="PackedScene" path="res://RangeWeapon.tscn" id="18"]
+
+[sub_resource type="SpriteFrames" id="5"]
+animations = []
+
+[sub_resource type="RectangleShape2D" id="11"]
+size = Vector2(8, 6)
+
+[sub_resource type="CompressedTexture2D" id="22"]
+
+[sub_resource type="Animation" id="16"]
+resource_name = "AttackDown"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeleeWeapon:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-260.0, -215.0, -170.0, -125.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeleeWeapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(11, 2), Vector2(8, 9), Vector2(0, 11), Vector2(-8, 7), Vector2(-11, -4.76837e-07)]
+}
+
+[sub_resource type="Animation" id="17"]
+resource_name = "AttackLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeleeWeapon:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-200.0, -155.0, -110.0, -65.0, -20.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeleeWeapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 11), Vector2(-7, 10), Vector2(-12, 3), Vector2(-11, -6), Vector2(-6, -10)]
+}
+
+[sub_resource type="Animation" id="18"]
+resource_name = "AttackRight"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeleeWeapon:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-350.0, -305.0, -260.0, -215.0, -170.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeleeWeapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, -11), Vector2(10, -6), Vector2(12, 2), Vector2(8, 9), Vector2(0, 12)]
+}
+
+[sub_resource type="Animation" id="19"]
+resource_name = "AttackUp"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeleeWeapon:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-75.0, -30.0, 15.0, 60.0, 105.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeleeWeapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-11, -5), Vector2(-6, -10), Vector2(3, -11), Vector2(10, -7), Vector2(11, 1)]
+}
+
+[sub_resource type="Animation" id="20"]
+resource_name = "IdleSword"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeleeWeapon:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeleeWeapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -10)]
+}
+
+[sub_resource type="Animation" id="21"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeleeWeapon:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-229.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeleeWeapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vn211"]
+_data = {
+"AttackDown": SubResource("16"),
+"AttackLeft": SubResource("17"),
+"AttackRight": SubResource("18"),
+"AttackUp": SubResource("19"),
+"IdleSword": SubResource("20"),
+"RESET": SubResource("21")
+}
+
+[node name="KnightPlayer" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(0.991189, 0.910824)
+collision_mask = 65
+script = ExtResource("10")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(1, 1.07143)
+sprite_frames = SubResource("5")
+animation = &"Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("11")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -15
+limit_top = 0
+limit_right = 336
+limit_bottom = 193
+limit_smoothed = true
+
+[node name="MeleeWeapon" parent="." instance=ExtResource("11")]
+position = Vector2(11, 2)
+rotation = -4.01251
+scale = Vector2(1.02405, 1.04847)
+
+[node name="Node2D" type="Node2D" parent="MeleeWeapon"]
+
+[node name="GoldenSword" type="Sprite2D" parent="MeleeWeapon/Node2D"]
+visible = false
+texture = SubResource("22")
+
+[node name="Cleaver" type="Sprite2D" parent="MeleeWeapon/Node2D"]
+visible = false
+texture = ExtResource("14")
+
+[node name="DuelSword" type="Sprite2D" parent="MeleeWeapon/Node2D"]
+visible = false
+texture = ExtResource("15")
+
+[node name="KatanaSword" type="Sprite2D" parent="MeleeWeapon/Node2D"]
+visible = false
+texture = ExtResource("17")
+
+[node name="KnightSword" type="Sprite2D" parent="MeleeWeapon/Node2D"]
+visible = false
+texture = ExtResource("13")
+
+[node name="RedGemSword" type="Sprite2D" parent="MeleeWeapon/Node2D"]
+visible = false
+texture = ExtResource("16")
+
+[node name="AnimeSword" type="Sprite2D" parent="MeleeWeapon/Node2D"]
+visible = false
+texture = ExtResource("12")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MeleeWeapon"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_vn211")
+}
+
+[node name="RangeWeapon" parent="." instance=ExtResource("18")]
+position = Vector2(4.03556, 0)
+scale = Vector2(0.910675, 0.645558)
